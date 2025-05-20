@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loch Lomond 7/2 代理發表暨晚宴</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .video-container {
+      position: relative;
+      width: 100%;
+      /* Aspect ratio padding trick */
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+    }
+
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures video covers the container */
+    }
+
+    .custom-play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 80px; /* Increased size */
+      height: 80px; /* Increased size */
+      font-size: 40px; /* Increased icon size */
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+      z-index: 10;
+      opacity: 1;
+    }
+
+    .custom-play-button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .custom-play-button.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .js-scroll-animate {
+      transition-property: opacity, transform;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 overflow-x-hidden">
+  <!-- Hero ------------------------------------------------------------------>
+  <section class="relative h-screen bg-center bg-cover" style="background-image:url('https://iili.io/3iQ7dnn.png')">
+    <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white p-6">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Loch Lomond Whisky 代理發表暨晚宴企劃概要</h1>
+      <p class="text-lg md:text-2xl mb-6">2025 / 07 / 02 （三）｜Sheraton Grand Taipei 祿廳</p>
+      <a href="#interactive" class="px-8 py-3 bg-amber-600 rounded-full text-white text-lg shadow-lg hover:bg-amber-700 transition">瀏覽迎賓互動</a>
+    </div>
+  </section>
+
+  <!-- Timeline -------------------------------------------------------------->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-10 js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out">活動流程概覽</h2>
+      <div class="space-y-8 js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out delay-200">
+        <div class="flex items-start"><span class="w-32 font-semibold">17:30</span><p>迎賓報到｜高爾夫揮桿體驗 &amp; Highball 吧台</p></div>
+        <div class="flex items-start"><span class="w-32 font-semibold">18:30</span><p>醒獅鼓陣開場</p></div>
+        <div class="flex items-start"><span class="w-32 font-semibold">19:00</span><p><strong>Dual‑Drive Tee‑Off Ceremony</strong>（雙勢共推啟動儀式）</p></div>
+        <div class="flex items-start"><span class="w-32 font-semibold">19:30</span><p>晚宴（樂團第一段）</p></div>
+        <div class="flex items-start"><span class="w-32 font-semibold">20:30</span><p>互動抽獎 &amp; 樂團第二段</p></div>
+        <div class="flex items-start"><span class="w-32 font-semibold">21:30</span><p>安可演出／Cheers 合影</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Area Cards ---------------------------------------------->
+  <section class="py-16 bg-white" id="interactive">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-10 js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out">迎賓與互動活動</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1 : Phigolf -->
+        <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out delay-100">
+          <img src="https://iili.io/3s3ztrN.png" alt="Phigolf 模擬器" class="w-full h-56 object-cover" />
+          <div class="p-6 flex flex-col">
+            <h3 class="text-xl font-semibold mb-2">Phigolf 2 高爾夫揮桿體驗</h3>
+            <p class="text-sm mb-4 flex-grow">挑戰推桿準度，成績同步排行榜，晚宴抽獎再加碼！</p>
+            <button type="button" class="detail-btn mt-4 inline-flex items-center justify-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg shadow transition" data-modal="#phigolf-modal">細節預覽</button>
+          </div>
+        </div>
+
+        <!-- Card 2 : Highball -->
+        <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out delay-200">
+          <img src="https://iili.io/3s9Vt6u.png" alt="Highball Bar" class="w-full h-56 object-cover" />
+          <div class="p-6 flex flex-col">
+            <h3 class="text-xl font-semibold mb-2">Highball 吧台 &amp; 拍照牆</h3>
+            <p class="text-sm mb-4 flex-grow">招牌調酒搭配品牌框打卡，活動熱度立刻擴散社群。</p>
+            <button type="button" class="detail-btn mt-4 inline-flex items-center justify-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg shadow transition" data-modal="#highball-modal">細節預覽</button>
+          </div>
+        </div>
+
+        <!-- Card 3 : Display -->
+        <div class="bg-gray-100 rounded-2xl shadow-lg overflow-hidden js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out delay-300">
+          <img src="https://iili.io/3sH2Zp1.png" alt="產品展示" class="w-full h-56 object-cover" />
+          <div class="p-6 flex flex-col">
+            <h3 class="text-xl font-semibold mb-2">威士忌火力展示區</h3>
+            <p class="text-sm mb-4 flex-grow">沉浸式光盒陳列，掃 QR 立即解鎖酒款故事。</p>
+            <button type="button" class="detail-btn mt-4 inline-flex items-center justify-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg shadow transition" data-modal="#display-modal">細節預覽</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="phigolf-modal" class="modal hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl w-full md:max-w-2xl relative">
+      <button data-close class="absolute top-3 right-3 text-2xl font-bold text-gray-500 hover:text-gray-700">&times;</button>
+      <iframe class="w-full h-60 md:h-72 rounded-t-lg" src="https://www.youtube-nocookie.com/embed/YQr4tiIZax8?si=7OWRm5t3OBAnElj4" title="Phigolf 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="p-6 text-sm space-y-2">
+        <p class="font-semibold">Phigolf 2 高爾夫揮桿體驗</p>
+        <ul class="list-disc list-inside space-y-1">
+          <li><strong>真實揮桿體驗：</strong>親身感受 The Open 般的揮桿樂趣。</li>
+          <li><strong>即時成績挑戰：</strong>同步排行榜，增添競技張力。</li>
+          <li><strong>限量禮品：</strong>Top Rank 可獲品牌小禮，互動再升級。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="highball-modal" class="modal hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl w-full md:max-w-2xl relative">
+      <button data-close class="absolute top-3 right-3 text-2xl font-bold text-gray-500 hover:text-gray-700">&times;</button>
+      <div class="p-6 text-sm space-y-4">
+        <h3 class="text-xl font-semibold mb-3">Highball 吧台 & 品牌拍照牆</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <img src="https://iili.io/3sm3Zru.png" alt="Highball 吧台照片1" class="w-full h-auto object-cover rounded-lg shadow-md" />
+          <img src="https://iili.io/3smBncX.png" alt="Highball 吧台照片2" class="w-full h-auto object-cover rounded-lg shadow-md" />
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-1">獨家調酒體驗</h4>
+          <p class="text-xs sm:text-sm">現場專業調酒師精心調製品牌特色 Highball，為賓客帶來舒適暢快的品飲體驗，沉浸於 Loch Lomond 威士忌獨有的風味魅力。</p>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-1">品牌互動拍照牆</h4>
+          <p class="text-xs sm:text-sm">精美的品牌背景牆搭配專業攝影團隊，提供賓客即時拍攝與合影服務，留下精彩難忘的現場記憶，即拍即取、快速分享。</p>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-1">即時數位分享</h4>
+          <p class="text-xs sm:text-sm">現場提供專屬數位相框與即時影像下載服務，賓客可立即於社群媒體分享活動盛況，提升活動現場熱度與品牌曝光。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="display-modal" class="modal hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl w-full md:max-w-2xl relative">
+      <button data-close class="absolute top-3 right-3 text-2xl font-bold text-gray-500 hover:text-gray-700">&times;</button>
+      <img src="https://iili.io/3spWeTu.png" alt="威士忌火力展示區" class="w-full h-60 md:h-72 object-cover rounded-t-lg" />
+      <div class="p-6 text-sm">
+        <h3 class="text-xl font-semibold mb-3">威士忌火力展示區</h3>
+
+        <h4 class="font-semibold mt-4 mb-1">沉浸式品牌探索</h4>
+        <p class="mb-3">透過精緻設計的光影陳列，呈現 Loch Lomond 威士忌的品牌工藝與精神，提供賓客深刻的視覺體驗。</p>
+        
+        <h4 class="font-semibold mt-4 mb-1">互動故事解鎖</h4>
+        <p class="mb-3">現場設置 QR Code，賓客可立即掃描，快速連結至酒款專屬頁面，深入探索每款酒背後的製作故事與風味特色。</p>
+        
+        <h4 class="font-semibold mt-4 mb-1">多元酒款展示</h4>
+        <p>現場展示品牌多款經典與限量威士忌，呈現多層次風味，滿足不同品味賓客的期待，彰顯品牌豐富性與卓越品質。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lion & Band Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12 js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">醒獅鼓陣 × 現場樂團</h2>
+        <p class="text-lg text-gray-600"><strong>3 鼓 2 獅</strong> 隆重揭幕，跳樁與鑼鼓聲勢彰顯品牌「勢如破竹」。</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out delay-100">
+          <img src="https://iili.io/3s6d5b4.png" alt="醒獅鼓陣" class="w-full rounded-2xl shadow-xl mb-6" />
+          <img src="https://iili.io/3s4Wlxs.jpg" alt="現場樂團" class="w-full rounded-2xl shadow-xl" />
+        </div>
+        <div class="md:pl-8 js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out delay-200">
+          <h3 class="text-2xl font-semibold mb-6">精彩演繹</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-amber-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span><strong>氣勢開場：</strong>醒獅鼓陣以磅礴氣勢為活動揭開序幕，寓意品牌鴻圖大展。</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-amber-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span><strong>聽覺饗宴：</strong>4 人 Live Band 帶來爵士與流行音樂，分段演出完美襯托晚宴的每一時刻。</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-amber-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span><strong>互動高潮：</strong>特設合唱與點歌環節，邀請賓客一同參與，共同創造難忘的歡樂氛圍。</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dual‑Drive Tee‑Off Ceremony -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12 js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Dual‑Drive Tee‑Off Ceremony</h2>
+        <p class="text-lg text-gray-600"><em>雙勢共推啟動儀式</em> —— 亞太區總監 &amp; 台灣總經理同步擊球，啟動品牌榮耀。</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="md:pr-8 js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out delay-200 order-last md:order-first">
+          <h3 class="text-2xl font-semibold mb-6">榮耀啟動</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-amber-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span><strong>視覺震撼：</strong>雙軌匯聚球道結合 LED 即時動畫，呈現一桿進洞的精彩瞬間，觸發品牌專屬視覺特效。</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-amber-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span><strong>高效呈現：</strong>儀式於 30 秒內精準完成，創造高密度視覺衝擊，捕捉絕佳媒體畫面。</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-amber-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span><strong>無縫銜接：</strong>啟動儀式後，以 Highball 乾杯慶祝，流暢地開啟精彩晚宴。</span>
+            </li>
+          </ul>
+        </div>
+        <div class="flex flex-col space-y-6 js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out delay-100">
+          <img src="https://iili.io/3sgP9MN.png" alt="Tee-Off 開場" class="w-full rounded-2xl shadow-xl" />
+          <img src="https://iili.io/3sgblFR.png" alt="Tee-Off 完成" class="w-full rounded-2xl shadow-xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12 js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">活動精彩瞬間</h2>
+        <p class="text-lg text-gray-600">一同回顧活動的精彩時刻。</p>
+      </div>
+      <div class="js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out delay-100">
+        <div class="video-container rounded-lg shadow-xl overflow-hidden">
+          <video id="customVideoPlayer" class="w-full h-full">
+            <source src="20250521_0558_No Prompt Provided_storyboard_01jvqv80p0fzsay8agtb6c4189.mp4" type="video/mp4">
+            您的瀏覽器不支援 HTML5 影片標籤。
+          </video>
+          <button id="customPlayButton" class="custom-play-button">
+            ▶
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer --------------------------------------------------------------->
+  <footer class="bg-gray-800 text-gray-300 text-center py-6">
+    <p class="text-sm">此頁面為提案示意，預算規劃將另提供<br/><span class="tracking-wide">Century Creative • 活動組</span></p>
+    <p class="mt-2 text-sm"><a href="mailto:century@icpc.com.tw" class="underline hover:text-white">century@icpc.com.tw</a></p>
+  </footer>
+
+  <!-- Modal Script -->
+  <script>
+    const openButtons = document.querySelectorAll('.detail-btn');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('[data-close]');
+
+    openButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.querySelector(btn.dataset.modal);
+        target.classList.remove('hidden');
+      });
+    });
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.modal').classList.add('hidden');
+      });
+    });
+
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') modals.forEach(m => m.classList.add('hidden'));
+    });
+
+    // Scroll Animation Script
+    const scrollAnimations = () => {
+      const animatedElements = document.querySelectorAll('.js-scroll-animate');
+      if (!animatedElements.length) return;
+
+      const observer = new IntersectionObserver((entries, observerInstance) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            observerInstance.unobserve(entry.target); // Animate only once
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animatedElements.forEach(el => {
+        observer.observe(el);
+      });
+    };
+    scrollAnimations();
+
+    // Custom Video Player Script
+    const video = document.getElementById('customVideoPlayer');
+    const playButton = document.getElementById('customPlayButton');
+
+    if (video && playButton) {
+      playButton.addEventListener('click', () => {
+        if (video.paused || video.ended) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+
+      video.addEventListener('play', () => {
+        playButton.classList.add('hidden');
+      });
+
+      video.addEventListener('pause', () => {
+        playButton.classList.remove('hidden');
+      });
+
+      video.addEventListener('ended', () => {
+        playButton.classList.remove('hidden');
+      });
+      
+      // Show button initially if video is paused (which it is by default)
+      if (video.paused) {
+        playButton.classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

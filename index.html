@@ -55,6 +55,12 @@
     .js-scroll-animate {
       transition-property: opacity, transform;
     }
+
+    /* Style for Highball modal content scrolling */
+    #highball-modal .p-6 {
+      max-height: 70vh; /* Adjust as needed, 70% of viewport height */
+      overflow-y: auto;
+    }
   </style>
 </head>
 <body class="font-sans text-gray-800 overflow-x-hidden">
@@ -113,7 +119,7 @@
           <img src="https://iili.io/3sH2Zp1.png" alt="產品展示" class="w-full h-56 object-cover" />
           <div class="p-6 flex flex-col">
             <h3 class="text-xl font-semibold mb-2">威士忌火力展示區</h3>
-            <p class="text-sm mb-4 flex-grow">沉浸式光盒陳列，掃 QR 立即解鎖酒款故事。</p>
+            <p class="text-sm mb-4 flex-grow"> immersing 式光盒陳列，掃 QR 立即解鎖酒款故事。</p>
             <button type="button" class="detail-btn mt-4 inline-flex items-center justify-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg shadow transition" data-modal="#display-modal">細節預覽</button>
           </div>
         </div>
@@ -256,8 +262,7 @@
   <section class="py-16 bg-gray-100">
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-12 js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">活動精彩瞬間</h2>
-        <p class="text-lg text-gray-600">一同回顧活動的精彩時刻。</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">品牌/產品形象影片示意</h2>
       </div>
       <div class="js-scroll-animate opacity-0 translate-y-8 transform transition-all duration-700 ease-out delay-100">
         <div class="video-container rounded-lg shadow-xl overflow-hidden">
@@ -294,12 +299,29 @@
 
     closeButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        btn.closest('.modal').classList.add('hidden');
+        const modal = btn.closest('.modal');
+        modal.classList.add('hidden');
+        if (modal.id === 'phigolf-modal') {
+          const iframe = modal.querySelector('iframe');
+          if (iframe && iframe.src) {
+            iframe.src = iframe.src; // Reloads the iframe, stopping playback
+          }
+        }
       });
     });
 
     window.addEventListener('keydown', e => {
-      if (e.key === 'Escape') modals.forEach(m => m.classList.add('hidden'));
+      if (e.key === 'Escape') {
+        modals.forEach(m => {
+          if (!m.classList.contains('hidden') && m.id === 'phigolf-modal') {
+            const iframe = m.querySelector('iframe');
+            if (iframe && iframe.src) {
+              iframe.src = iframe.src; // Reloads the iframe, stopping playback
+            }
+          }
+          m.classList.add('hidden');
+        });
+      }
     });
 
     // Scroll Animation Script
